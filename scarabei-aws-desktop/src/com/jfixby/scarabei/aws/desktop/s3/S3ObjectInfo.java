@@ -7,7 +7,8 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.jfixby.scarabei.api.collections.Collections;
 import com.jfixby.scarabei.api.collections.List;
 import com.jfixby.scarabei.api.log.L;
-import com.jfixby.scarabei.api.util.JUtils;
+import com.jfixby.scarabei.api.strings.Strings;
+import com.jfixby.scarabei.api.util.Utils;
 import com.jfixby.scarabei.api.util.path.RelativePath;
 
 class S3ObjectInfo {
@@ -29,7 +30,7 @@ class S3ObjectInfo {
 		this.isFolder = this.s3Key.endsWith("/");
 		this.size = objectSummary.getSize();
 		this.lastModified = objectSummary.getLastModified().getTime();
-		this.path = JUtils.newRelativePath(this.s3Key);
+		this.path = Utils.newRelativePath(this.s3Key);
 		this.md5 = objectSummary.getETag().toUpperCase();
 	}
 
@@ -42,7 +43,7 @@ class S3ObjectInfo {
 		this.isFolder = true;
 		this.size = 0;
 		this.lastModified = 0;
-		this.path = JUtils.newRelativePath(prefix);
+		this.path = Utils.newRelativePath(prefix);
 	}
 
 	public void addAllChildren (final List<S3ObjectSummary> summs) {
@@ -92,7 +93,7 @@ class S3ObjectInfo {
 
 	public void addDirectSubfolders (final List<String> subfolders) {
 		for (final String name : subfolders) {
-			final List<String> steps = JUtils.split(name, RelativePath.SEPARATOR);
+			final List<String> steps = Strings.split(name, RelativePath.SEPARATOR);
 			final String properName = steps.getLast();
 			this.directSubfolders.add(properName);
 		}
@@ -100,7 +101,7 @@ class S3ObjectInfo {
 
 	public void addDirectChildFiles (final List<String> files) {
 		for (final String name : files) {
-			final List<String> steps = JUtils.split(name, RelativePath.SEPARATOR);
+			final List<String> steps = Strings.split(name, RelativePath.SEPARATOR);
 			final String properName = steps.getLast();
 			this.directChildFiles.add(properName);
 		}

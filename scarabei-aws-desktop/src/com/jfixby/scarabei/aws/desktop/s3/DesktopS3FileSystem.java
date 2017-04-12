@@ -32,7 +32,7 @@ import com.jfixby.scarabei.api.io.InputStream;
 import com.jfixby.scarabei.api.io.InputStreamOpener;
 import com.jfixby.scarabei.api.java.ByteArray;
 import com.jfixby.scarabei.api.log.L;
-import com.jfixby.scarabei.api.util.JUtils;
+import com.jfixby.scarabei.api.util.Utils;
 import com.jfixby.scarabei.api.util.path.AbsolutePath;
 import com.jfixby.scarabei.api.util.path.RelativePath;
 import com.jfixby.scarabei.aws.api.s3.S3FileSystem;
@@ -201,7 +201,7 @@ class DesktopS3FileSystem extends AbstractFileSystem implements FileSystem, S3Fi
 				@Override
 				public void scanElement (final S3ObjectSummary summ, final long i) {
 					final String key = summ.getKey();
-					final RelativePath keyPath = JUtils.newRelativePath(key);
+					final RelativePath keyPath = Utils.newRelativePath(key);
 					if (keyPath.equals(relative)) {
 						return;
 					}
@@ -273,7 +273,7 @@ class DesktopS3FileSystem extends AbstractFileSystem implements FileSystem, S3Fi
 		if (relative.isRoot()) {
 			return true;
 		}
-		RelativePath current = JUtils.newRelativePath();
+		RelativePath current = Utils.newRelativePath();
 		final Collection<String> steps = relative.steps();
 		for (int i = 0; i < steps.size(); i++) {
 			current = current.child(steps.getElementAt(i));
@@ -366,7 +366,7 @@ class DesktopS3FileSystem extends AbstractFileSystem implements FileSystem, S3Fi
 			for (int i = 0; i < children.size(); i++) {
 				final S3ObjectInfo infoToCopy = children.getElementAt(i);
 				final boolean isFolder = infoToCopy.s3Key.endsWith(RelativePath.SEPARATOR);
-				final RelativePath file_to_copy_relative = JUtils.newRelativePath(infoToCopy.s3Key);
+				final RelativePath file_to_copy_relative = Utils.newRelativePath(infoToCopy.s3Key);
 				final RelativePath relative = file_to_copy_relative.splitAt(start.size());
 				final File target_file = ouput_folder.proceed(relative);
 				final File input_file = input_folder.proceed(relative);

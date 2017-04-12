@@ -13,7 +13,7 @@ import com.jfixby.scarabei.api.file.FileSystem;
 import com.jfixby.scarabei.api.file.FilesList;
 import com.jfixby.scarabei.api.java.ByteArray;
 import com.jfixby.scarabei.api.log.L;
-import com.jfixby.scarabei.api.util.JUtils;
+import com.jfixby.scarabei.api.util.Utils;
 import com.jfixby.scarabei.api.util.path.AbsolutePath;
 import com.jfixby.scarabei.api.util.path.RelativePath;
 import com.jfixby.scarabei.red.filesystem.AbstractRedFile;
@@ -161,7 +161,7 @@ class S3File extends AbstractRedFile implements File {
 		Collections.scanCollection(info.allChildren, new CollectionScanner<S3ObjectInfo>() {
 			@Override
 			public void scanElement (final S3ObjectInfo e, final long i) {
-				final AbsolutePath<FileSystem> p = JUtils.newAbsolutePath((FileSystem)S3File.this.fs, e.path);
+				final AbsolutePath<FileSystem> p = Utils.newAbsolutePath((FileSystem)S3File.this.fs, e.path);
 				result.add(S3File.this.fs.newFile(p));
 			}
 		});
