@@ -3,14 +3,19 @@ sourceCompatibility = 1.8
 
 dependencies {
 
-          compile "com.github.Scarabei.ScarabeiAPI:scarabei-api:$scarabeiAPILevel"
+compile "com.github.Scarabei.ScarabeiAPI:scarabei-api:$scarabeiAPILevel"
 
-          compile "com.github.Scarabei.ScarabeiRed:scarabei-red:$scarabeiRedVersion"
+compile "com.github.Scarabei.ScarabeiRed:scarabei-red:$scarabeiRedVersion"
 
-          compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-api:$scarabeiAwsAPILevel"
-          compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-core:$scarabeiAwsAPILevel"
+compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-api:$scarabeiAwsAPILevel"
 
-          compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.103'
+compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-core:$scarabeiAwsAPILevel"
+
+
+
+
+
+	         compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.103'
 	         
 }	
 	
