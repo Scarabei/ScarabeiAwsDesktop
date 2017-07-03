@@ -3,13 +3,13 @@ sourceCompatibility = 1.8
 
 dependencies {
 
-compile "com.github.Scarabei.ScarabeiAPI:scarabei-api:$scarabeiAPILevel"
+compile "com.github.Scarabei.Scarabei:scarabei-api:$scarabeiAPILevel"
 
 compile "com.github.Scarabei.ScarabeiRed:scarabei-red:$scarabeiRedVersion"
 
-compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-api:$scarabeiAwsAPILevel"
+compile "com.github.Scarabei.ScarabeiAws:scarabei-aws-api:$scarabeiAwsAPILevel"
 
-compile "com.github.Scarabei.ScarabeiAwsAPI:scarabei-aws-core:$scarabeiAwsAPILevel"
+compile "com.github.Scarabei.ScarabeiAws:scarabei-aws-core:$scarabeiAwsAPILevel"
 
 
 
