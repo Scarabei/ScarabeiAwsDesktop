@@ -109,9 +109,13 @@ class S3ObjectInfo {
 
 	public void print (final String tag) {
 		L.d(tag, this);
-		this.directSubfolders.print("subfolders");
-		this.directChildFiles.print("files     ");
-		this.allChildren.print("children  ");
+// this.directSubfolders.print("subfolders");
+// this.directChildFiles.print("files ");
+// this.allChildren.print("children ");
+
+		L.e("subfolders", this.directSubfolders);
+		L.e("files     ", this.directChildFiles);
+		L.e("children  ", this.allChildren);
 
 	}
 
