@@ -1,9 +1,9 @@
 
 package com.jfixby.scarabei.aws.desktop.sqs;
 
-import com.jfixby.scarabei.aws.api.sqs.SQSComponent;
 import com.jfixby.scarabei.aws.api.sqs.SQSClienSpecs;
 import com.jfixby.scarabei.aws.api.sqs.SQSClient;
+import com.jfixby.scarabei.aws.api.sqs.SQSComponent;
 import com.jfixby.scarabei.aws.api.sqs.SQSCreateQueueParams;
 import com.jfixby.scarabei.aws.api.sqs.SQSDeleteMessageParams;
 import com.jfixby.scarabei.aws.api.sqs.SQSReceiveMessageParams;

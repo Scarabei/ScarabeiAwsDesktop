@@ -3,9 +3,9 @@ package com.jfixby.scarabei.aws.desktop.ses;
 
 import com.jfixby.scarabei.aws.api.ses.AmazonSimpleEmail;
 import com.jfixby.scarabei.aws.api.ses.AmazonSimpleEmailSpecs;
-import com.jfixby.scarabei.aws.api.ses.SESComponent;
 import com.jfixby.scarabei.aws.api.ses.SESClient;
 import com.jfixby.scarabei.aws.api.ses.SESClientSpecs;
+import com.jfixby.scarabei.aws.api.ses.SESComponent;
 
 public class DesktopSES implements SESComponent {
 
